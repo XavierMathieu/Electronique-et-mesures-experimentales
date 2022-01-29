@@ -13,4 +13,5 @@ plt.minorticks_on()
 plt.xlabel("Tension mesurée (mV)")
 plt.ylabel("Nombre de données")
 plt.show
+plt.savefig("Patate_Inox-Zinc_1V", format="pdf")
 # %%

@@ -14,10 +14,12 @@ plt.minorticks_on()
 plt.xlabel("Tension mesurée (mV)")
 plt.ylabel("Nombre de données")
 plt.show
+plt.savefig("Patate_Montage_Tension_0.5V", format="pdf")
 # %%
 plt.hist(courant, bins=n_bins, color="k")
 plt.minorticks_on()
 plt.xlabel("Courant mesuré (mA)")
 plt.ylabel("Nombre de données")
 plt.show
+plt.savefig("Patate_Montage_Courant_0.5V", format="pdf")
 # %%

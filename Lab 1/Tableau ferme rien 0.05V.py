@@ -13,4 +13,5 @@ plt.minorticks_on()
 plt.xlabel("Tension mesurée (mV)")
 plt.ylabel("Nombre de données")
 plt.show
+plt.savefig("Circuit_fermé_rien_0.05V", format="pdf")
 # %%
