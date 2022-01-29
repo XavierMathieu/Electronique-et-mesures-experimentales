@@ -13,5 +13,5 @@ plt.minorticks_on()
 plt.xlabel("Tension mesurée (mV)")
 plt.ylabel("Nombre de données")
 plt.show
-plt.savefig("Circuit_ouvert_0.05V", format="pdf")
+#plt.savefig(rf"C:/DATA/Université/Électronique et mesures/Lab 1/Circuit_ouvert_0.05V.pdf")
 # %%
