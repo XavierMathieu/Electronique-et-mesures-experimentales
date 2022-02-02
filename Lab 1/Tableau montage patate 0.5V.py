@@ -17,12 +17,13 @@ plt.xlabel("Tension mesurée (mV)")
 plt.ylabel("Nombre de données")
 
 caption = """
-Figure 2: Distribution des valeurs de tensions aux bornes d'une patate 
-avec un couple d'électrodes inox-aluminium en circuit ouvert (i.e. aucune 
-résistance de charge, seulement le voltmètre) à une résolution de ±1V.
+Figure 10: Distribution des valeurs de tensions aux bornes 
+d'une patate avec un couple d'électrodes Inox-zinc en série 
+avec une résistance de 1kOhm et une résistance de 12 Ohm 
+(nommées dans le sens du courant) à une résolution de ±0.5V.
 """
 
-plt.text(0, 0.20, caption, fontsize='large', verticalalignment='top', transform=plt.gcf().transFigure)
+plt.text(0.08, 0.20, caption, fontsize='large', verticalalignment='top', transform=plt.gcf().transFigure)
 
 plt.show
 #plt.savefig(rf"C:/DATA/Université/Électronique et mesures/Lab 1/Patate_Montage_Tension_0.5V.pdf")
@@ -36,9 +37,9 @@ plt.xlabel("Courant mesuré (mA)")
 plt.ylabel("Nombre de données")
 
 caption = """
-Figure 2: Distribution des valeurs de tensions aux bornes d'une patate 
-avec un couple d'électrodes inox-aluminium en circuit ouvert (i.e. aucune 
-résistance de charge, seulement le voltmètre) à une résolution de ±1V.
+Figure 11: Distribution des valeurs d'intensité du courant calculée 
+avec la tension aux bornes de la résistance de 12 Ohm dans le circuit
+de la patate de la figure 10 à une résolution de ±0.5V.
 """
 
 plt.text(0, 0.20, caption, fontsize='large', verticalalignment='top', transform=plt.gcf().transFigure)

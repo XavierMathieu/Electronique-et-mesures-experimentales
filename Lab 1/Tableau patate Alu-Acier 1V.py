@@ -16,8 +16,8 @@ plt.xlabel("Tension mesurée (mV)")
 plt.ylabel("Nombre de données")
 
 caption = """
-Figure 2: Distribution des valeurs de tensions aux bornes d'une patate 
-avec un couple d'électrodes inox-aluminium en circuit ouvert (i.e. aucune 
+Figure 3: Distribution des valeurs de tensions aux bornes d'une patate 
+avec un couple d'électrodes acier-aluminium en circuit ouvert (i.e. aucune 
 résistance de charge, seulement le voltmètre) à une résolution de ±1V.
 """
 

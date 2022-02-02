@@ -16,12 +16,12 @@ plt.xlabel("Tension mesurée (mV)")
 plt.ylabel("Nombre de données")
 
 caption = """
-Figure 2: Distribution des valeurs de tensions aux bornes d'une patate 
-avec un couple d'électrodes inox-aluminium en circuit ouvert (i.e. aucune 
-résistance de charge, seulement le voltmètre) à une résolution de ±1V.
+Figure 6: Distribution des valeurs de tensions captées par 
+le module d'aquisition avec un circuit vide sans alimentation 
+(i.e. aucune connexion entre les fils) à une résolution de ±0,05V.
 """
 
-plt.text(0, 0.20, caption, fontsize='large', verticalalignment='top', transform=plt.gcf().transFigure)
+plt.text(0.1, 0.20, caption, fontsize='large', verticalalignment='top', transform=plt.gcf().transFigure)
 
 plt.show
 #plt.savefig(rf"C:/DATA/Université/Électronique et mesures/Lab 1/Circuit_ouvert_0.05V.pdf")
