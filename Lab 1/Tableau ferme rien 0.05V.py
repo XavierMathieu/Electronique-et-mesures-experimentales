@@ -8,7 +8,8 @@ Tension = a[0]["data"]*1000
 n_bins = 40
 dist1 = Tension
 
-plt.subplots_adjust(bottom=0.3)
+fig=plt.figure(figsize=(6.4, 4.8*1.2))
+fig.subplots_adjust(bottom=0.3)
 
 plt.hist(dist1, bins=n_bins, edgecolor='black', facecolor="lightgrey")
 plt.minorticks_on()

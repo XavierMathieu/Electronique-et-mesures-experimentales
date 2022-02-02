@@ -8,7 +8,8 @@ Tension = a[0]["data"]*1000
 n_bins = 20
 dist1 = Tension
 
-plt.subplots_adjust(bottom=0.3)
+fig=plt.figure(figsize=(6.4, 4.8*1.2))
+fig.subplots_adjust(bottom=0.3)
 
 plt.hist(dist1, bins=n_bins, edgecolor='black', facecolor="lightgrey")
 plt.minorticks_on()
@@ -22,7 +23,6 @@ résistance de charge, seulement le voltmètre) à une résolution de ±1V.
 """
 
 plt.text(0, 0.20, caption, fontsize='large', verticalalignment='top', transform=plt.gcf().transFigure)
-
 plt.show
-#plt.savefig(rf"C:/DATA/Université/Électronique et mesures/Lab 1/Patate_Alu-Acier_1V.pdf")
+#plt.savefig(rf"C:/DATA/Université/Électronique et mesures/Lab 1/Patate_Alu-Acier_1V.pdf", pad_inches=0.2)
 # %%

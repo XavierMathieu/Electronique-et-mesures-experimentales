@@ -10,7 +10,8 @@ x = np.array(range(510))/10
 dist1 = Tension
 
 plt.style.use('https://raw.githubusercontent.com/dccote/Enseignement/master/SRC/dccote-errorbars.mplstyle')
-plt.subplots_adjust(bottom=0.3)
+fig=plt.figure(figsize=(6.4, 4.8*1.2))
+fig.subplots_adjust(bottom=0.3)
 
 plt.scatter(x, dist1, color="k", s=2)
 plt.minorticks_on()

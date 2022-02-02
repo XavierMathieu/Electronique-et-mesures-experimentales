@@ -9,7 +9,8 @@ patate = Tensions[:, 0]
 courant = Tensions[:, 1]/12
 n_bins = 20
 
-plt.subplots_adjust(bottom=0.3)
+fig=plt.figure(figsize=(6.4, 4.8*1.2))
+fig.subplots_adjust(bottom=0.3)
 
 plt.hist(patate, bins=n_bins, edgecolor='black', facecolor="lightgrey")
 plt.minorticks_on()
@@ -29,7 +30,8 @@ plt.show
 #plt.savefig(rf"C:/DATA/Université/Électronique et mesures/Lab 1/Patate_Montage_Tension_0.5V.pdf")
 # %%
 
-plt.subplots_adjust(bottom=0.3)
+fig=plt.figure(figsize=(6.4, 4.8*1.2))
+fig.subplots_adjust(bottom=0.3)
 
 plt.hist(courant, bins=n_bins, edgecolor='black', facecolor="lightgrey")
 plt.minorticks_on()
