@@ -54,8 +54,8 @@ opt = optimize.curve_fit(Shockley, tension, courant)
 i_0 = opt[0][0]
 v_0 = opt[0][1]
 
-plt.plot(tension, Shockley(tension, i_0, v_0), color = "red", mfc = "red", ms = 4, ls = "-")
-plt.errorbar(tension, courant, xerr = incert_V, yerr = incert_I, mfc = "black", ms = 4, ls = "-")
+plt.plot(tension, Shockley(tension, i_0, v_0), color = "red", mfc = "red", ms = 4, ls = "-", label = "Courbe avec Shockley")
+plt.errorbar(tension, courant, xerr = incert_V, yerr = incert_I, mfc = "black", ms = 4, ls = "-", label = "Diode réelle")
 plt.xlabel("Tension à la source (V)")
 plt.ylabel("Courant mesuré (mA)")
 
@@ -66,7 +66,7 @@ courbe ajustée avec l'équation de Shockley.
 """
 
 plt.text(0.1, 0.2, caption, fontsize='x-large', verticalalignment='top', transform=plt.gcf().transFigure)
-
+plt.legend()
 plt.show
 
 #plt.savefig(rf"C:/DATA/Université/Électronique et mesures/Lab 3/Graphique diode Shockley rapport.pdf")
