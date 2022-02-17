@@ -9,25 +9,37 @@ data_0 = a[0]["data"]
 tension_0 = data_0[:, 0]
 courant_0 = data_0[:, 1]*1000
 
+print(f"{np.mean(courant_0[6:])} ± {np.std(courant_0[6:])}")
+
 data_02 = a[1]["data"]
 tension_02 = data_02[:, 0]
 courant_02 = data_02[:, 1]*1000
+
+print(f"{np.mean(courant_02[6:])} ± {np.std(courant_02[6:])}")
 
 data_04 = a[2]["data"]
 tension_04 = data_04[:, 0]
 courant_04 = data_04[:, 1]*1000
 
+print(f"{np.mean(courant_04[6:])} ± {np.std(courant_04[6:])}")
+
 data_06 = a[3]["data"]
 tension_06 = data_06[:, 0]
 courant_06 = data_06[:, 1]*1000
+
+print(f"{np.mean(courant_06[6:])} ± {np.std(courant_06[6:])}")
 
 data_08 = a[4]["data"]
 tension_08 = data_08[:, 0]
 courant_08 = data_08[:, 1]*1000
 
+print(f"{np.mean(courant_08[6:])} ± {np.std(courant_08[6:])}")
+
 data_1 = a[5]["data"]
 tension_1 = data_1[:, 0]
 courant_1 = data_1[:, 1]*1000
+
+print(f"{np.mean(courant_1[6:])} ± {np.std(courant_1[6:])}")
 
 def incertitude_source_6V(tension):
     incert_V = []
