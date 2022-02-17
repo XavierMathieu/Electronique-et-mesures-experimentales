@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import lvm_read as l
 
-a = l.read(rf'C:/DATA/Université/Électronique et mesures/Lab 3/Mesures Lab 3/Labo3_partie3-résistance.lvm')
+a = l.read(rf'C:/DATA/Université/Électronique et mesures/Lab 3/Mesures Lab 3/Labo3_partie3-condensateur.lvm')
 data = a[0]["data"]
 tension = data[:, 0]
 courant = data[:, 1]*1000
@@ -45,10 +45,11 @@ plt.xlabel("Tension à la source (V)")
 plt.ylabel("Courant mesuré (mA)")
 
 caption = """
-Figure 1: 
+Figure 2: Courant aux bornes d'un condensateur de 1
+microFarad (mA) en fonction de la tension à la source (V) 
 """
 
-plt.text(0, 0.15, caption, fontsize='large', verticalalignment='top', transform=plt.gcf().transFigure)
+plt.text(0.07, 0.2, caption, fontsize='x-large', verticalalignment='top', transform=plt.gcf().transFigure)
 
 plt.show
 #plt.savefig(rf"C:/DATA/Université/Électronique et mesures/Lab 3/Graphique I-V résistance.pdf")

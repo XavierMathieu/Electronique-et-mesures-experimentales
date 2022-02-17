@@ -45,10 +45,11 @@ plt.xlabel("Tension à la source (V)")
 plt.ylabel("Courant mesuré (mA)")
 
 caption = """
-Figure 1: 
+Figure 1: Courant aux bornes d'une résistance de 
+1.2 kOhms (mA) en fonction de la tension à la source (V)
 """
 
-plt.text(0, 0.15, caption, fontsize='large', verticalalignment='top', transform=plt.gcf().transFigure)
+plt.text(0.07, 0.2, caption, fontsize='x-large', verticalalignment='top', transform=plt.gcf().transFigure)
 
 plt.show
 #plt.savefig(rf"C:/DATA/Université/Électronique et mesures/Lab 3/Graphique I-V résistance.pdf")
