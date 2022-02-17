@@ -59,9 +59,6 @@ for j in range(len(tension)-1):
     R_dyn_In += [incer]
     R_dyn += [r]
 
-print(R_dyn)
-print(R_dyn_In)
-
 
 
 
@@ -78,13 +75,13 @@ plt.ylabel("Résistance mesurée (MOhm)")
 plt.ylim([-25,25])
 
 caption = """
-Figure 4: Résistance dynamique d'une diode (MOhm)
+Figure 2: Résistance dynamique d'une diode (MOhm)
 en fonction de la tension à la source (V)
 """
 
 plt.text(0.25, 0.2, caption, fontsize='x-large', verticalalignment='top', transform=plt.gcf().transFigure)
 
 plt.show
-#plt.savefig(rf"C:/DATA/Université/Électronique et mesures/Lab 3/Graphique I-V diode.pdf")
+#plt.savefig(rf"C:/DATA/Université/Électronique et mesures/Lab 3/Graphique R-V diode rapport.pdf")
 
 # %%
