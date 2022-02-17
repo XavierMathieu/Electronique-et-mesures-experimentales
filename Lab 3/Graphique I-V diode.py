@@ -5,10 +5,18 @@ import numpy as np
 import lvm_read as l
 
 a = l.read(rf'C:/DATA/Université/Électronique et mesures/Lab 3/Mesures Lab 3/Labo3_partie3-diode_inverse.lvm')
-data = a[0]["data"]
-tension = data[:, 0]
-courant = data[:, 1]*1000
+b = l.read(rf'C:/DATA/Université/Électronique et mesures/Lab 3/Mesures Lab 3/Labo3_partie3-diode.lvm')
+data_1 = a[0]["data"]
+data_2 = b[0]["data"]
 
+t_1 = data_1[:, 0]*(-1)
+c_1 = data_1[:, 1]*1000
+
+t_2 = data_2[:, 0]
+c_2 = data_2[:, 1]*1000
+
+tension = list(t_1)[::-1] + list(t_2)
+courant = list(c_1)[::-1] + list(c_2)
 
 incert_V = []
 for v in tension:
