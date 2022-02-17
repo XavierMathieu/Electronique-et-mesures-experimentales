@@ -45,7 +45,7 @@ plt.xlabel("Tension à la source (V)")
 plt.ylabel("Courant mesuré (mA)")
 
 caption = """
-Figure 3: Courant aux bornes d'une bobine de 1 mH
+Figure 3: Courant aux bornes d'une bobine de 1 mH (mA)
 en fonction de la tension à la source (V) 
 """
 

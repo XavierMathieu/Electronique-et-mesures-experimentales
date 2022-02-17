@@ -53,7 +53,7 @@ plt.xlabel("Tension à la source (V)")
 plt.ylabel("Courant mesuré (mA)")
 
 caption = """
-Figure 4: Courant aux bornes d'une diode
+Figure 4: Courant aux bornes d'une diode (mA)
 en fonction de la tension à la source (V) 
 """
 

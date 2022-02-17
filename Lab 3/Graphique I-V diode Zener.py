@@ -46,7 +46,7 @@ plt.ylabel("Courant mesuré (mA)")
 
 caption = """
 Figure 5: Courant aux bornes d'une diode Zener en 
-branchement inverse en fonction de la tension à la source (V) 
+branchement inverse (ma) en fonction de la tension à la source (V) 
 """
 
 plt.text(0, 0.2, caption, fontsize='x-large', verticalalignment='top', transform=plt.gcf().transFigure)
