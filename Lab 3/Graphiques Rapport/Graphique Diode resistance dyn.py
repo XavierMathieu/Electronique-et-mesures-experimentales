@@ -1,4 +1,5 @@
 #%%
+from math import erfc
 from turtle import fillcolor
 import matplotlib.pyplot as plt
 import numpy as np
@@ -67,23 +68,21 @@ print(R_dyn_In)
 
 #%%
 plt.style.use('https://raw.githubusercontent.com/dccote/Enseignement/master/SRC/dccote-errorbars.mplstyle')
-fig=plt.figure(figsize=(6.4, 4.8*1.2))
+fig=plt.figure(figsize=(10, 4.8*1.2))
 fig.subplots_adjust(bottom=0.3)
 
-
-#plt.errorbar(tension, courant, xerr = incert_V, yerr = incert_I, mfc = "black", ms = 4, ls = "-")
-plt.errorbar(tension[:-1], R_dyn, xerr = incert_V[:-1], ls = "-")
+plt.errorbar(tension[:-1], R_dyn, xerr = incert_V[:-1], ls = "-", mfc = "black", ms = 4)
 plt.plot
 plt.xlabel("Tension à la source (V)")
-plt.ylabel("Résistance mesurée (MOhms)")
-plt.ylim([-30,30])
+plt.ylabel("Résistance mesurée (MOhm)")
+plt.ylim([-25,25])
 
 caption = """
-Figure 4: Courant aux bornes d'une diode (mA)
-en fonction de la tension à la source (V) 
+Figure 4: Résistance dynamique d'une diode (MOhm)
+en fonction de la tension à la source (V)
 """
 
-plt.text(0.1, 0.2, caption, fontsize='x-large', verticalalignment='top', transform=plt.gcf().transFigure)
+plt.text(0.25, 0.2, caption, fontsize='x-large', verticalalignment='top', transform=plt.gcf().transFigure)
 
 plt.show
 #plt.savefig(rf"C:/DATA/Université/Électronique et mesures/Lab 3/Graphique I-V diode.pdf")
