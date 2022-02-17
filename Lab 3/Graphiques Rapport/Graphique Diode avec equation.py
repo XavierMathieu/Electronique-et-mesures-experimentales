@@ -1,8 +1,8 @@
 #%%
-import scipy as sp
 from turtle import fillcolor
 import matplotlib.pyplot as plt
 import numpy as np
+from scipy import optimize
 import lvm_read as l
 
 
@@ -41,8 +41,8 @@ for i in courant:
 
 incert_I = np.array(incert_I)
 
-def Shockley(V,a,b):
-    return a(np.e**(V/b) - 1)
+def Shockley(V, i_0, v_0):
+    return i_0*np.exp(V/v_0) - i_0
 
 
 #%%
@@ -50,21 +50,25 @@ plt.style.use('https://raw.githubusercontent.com/dccote/Enseignement/master/SRC/
 fig=plt.figure(figsize=(6.4, 4.8*1.2))
 fig.subplots_adjust(bottom=0.3)
 
-(a, b) = (Shockley, tension, courant)
+opt = optimize.curve_fit(Shockley, tension, courant)
+i_0 = opt[0][0]
+v_0 = opt[0][1]
 
-
+plt.plot(tension, Shockley(tension, i_0, v_0), color = "red", mfc = "red", ms = 4, ls = "-")
 plt.errorbar(tension, courant, xerr = incert_V, yerr = incert_I, mfc = "black", ms = 4, ls = "-")
 plt.xlabel("Tension à la source (V)")
 plt.ylabel("Courant mesuré (mA)")
 
 caption = """
-Figure 4: Courant aux bornes d'une diode (mA)
-en fonction de la tension à la source (V) 
+Figure 3: Courant aux bornes d'une diode (mA)
+en fonction de la tension à la source (V) et
+courbe ajustée avec l'équation de Shockley.
 """
 
 plt.text(0.1, 0.2, caption, fontsize='x-large', verticalalignment='top', transform=plt.gcf().transFigure)
 
 plt.show
-#plt.savefig(rf"C:/DATA/Université/Électronique et mesures/Lab 3/Graphique I-V diode.pdf")
+
+#plt.savefig(rf"C:/DATA/Université/Électronique et mesures/Lab 3/Graphique diode Shockley rapport.pdf")
 
 # %%
