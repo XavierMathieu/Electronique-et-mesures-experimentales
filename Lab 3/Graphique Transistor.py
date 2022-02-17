@@ -70,7 +70,7 @@ plt.xlabel("Tension à la source (V)")
 plt.ylabel("Courant mesuré (mA)")
 
 caption = """
-Figure 6: Courant aux bornes d'une transistor
+Figure 6: Courant aux bornes d'un transistor
 bipolaire 2219A (mA) en fonction de la tension à
 la source (V) et de la tension à la base (V)
 """
@@ -78,6 +78,6 @@ plt.legend(fontsize = "small", frameon = False)
 plt.text(0.07, 0.2, caption, fontsize='x-large', verticalalignment='top', transform=plt.gcf().transFigure)
 
 plt.show
-#plt.savefig(rf"C:/DATA/Université/Électronique et mesures/Lab 3/Graphique I-V résistance.pdf")
+#plt.savefig(rf"C:/DATA/Université/Électronique et mesures/Lab 3/Graphique I-V Transistor.pdf")
 
 # %%

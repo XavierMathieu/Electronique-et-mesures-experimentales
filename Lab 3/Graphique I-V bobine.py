@@ -52,6 +52,6 @@ en fonction de la tension à la source (V)
 plt.text(0.07, 0.2, caption, fontsize='x-large', verticalalignment='top', transform=plt.gcf().transFigure)
 
 plt.show
-#plt.savefig(rf"C:/DATA/Université/Électronique et mesures/Lab 3/Graphique I-V résistance.pdf")
+#plt.savefig(rf"C:/DATA/Université/Électronique et mesures/Lab 3/Graphique I-V bobine.pdf")
 
 # %%
