@@ -1,3 +1,11 @@
+#%%
+import scipy as sp
+from turtle import fillcolor
+import matplotlib.pyplot as plt
+import numpy as np
+import lvm_read as l
+
+
 a = l.read(rf'C:/DATA/Université/Électronique et mesures/Lab 3/Mesures Lab 3/Labo3_partie3-diode_inverse.lvm')
 b = l.read(rf'C:/DATA/Université/Électronique et mesures/Lab 3/Mesures Lab 3/Labo3_partie3-diode.lvm')
 data_1 = a[0]["data"]
@@ -33,13 +41,16 @@ for i in courant:
 
 incert_I = np.array(incert_I)
 
-
+def Shockley(V,a,b):
+    return a(np.e**(V/b) - 1)
 
 
 #%%
 plt.style.use('https://raw.githubusercontent.com/dccote/Enseignement/master/SRC/dccote-errorbars.mplstyle')
 fig=plt.figure(figsize=(6.4, 4.8*1.2))
 fig.subplots_adjust(bottom=0.3)
+
+(a, b) = (Shockley, tension, courant)
 
 
 plt.errorbar(tension, courant, xerr = incert_V, yerr = incert_I, mfc = "black", ms = 4, ls = "-")
