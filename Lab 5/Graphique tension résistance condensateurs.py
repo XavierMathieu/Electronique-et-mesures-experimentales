@@ -16,7 +16,7 @@ for i in range(15):
     
     V = np.mean(data[:, 1]*1000)
     I_V = np.std(data[:, 1]*1000)/math.sqrt(30)
-    
+
     Données += [[R, I_R, V, I_V]]
 
 Données = np.array(Données)
@@ -37,13 +37,15 @@ plt.xlabel("Résistance (Ohm)")
 plt.ylabel("Tension efficace (mV)")
 
 caption = """
-Figure 2:  
+Figure 2: Tension efficace du circuit (mV) en
+fonction de la résistance totale du circuit (Ohm)
+dans la circuit sans condensateurs en parallèle
 """
 
 plt.text(0.07, 0.2, caption, fontsize='x-large', verticalalignment='top', transform=plt.gcf().transFigure)
 
 plt.show
-#plt.savefig(rf"C:/DATA/Université/Électronique et mesures/Lab 3/Graphique I-V bobine.pdf")
+#plt.savefig(rf"C:/DATA/Université/Électronique et mesures/Lab 5/Graphique tension efficace condensateur.pdf")
 
 
 
