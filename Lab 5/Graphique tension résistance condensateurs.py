@@ -7,7 +7,7 @@ import math
 
 Données = []
 
-for i in range(15):
+for i in range(20):
     a = l.read(rf'C:/DATA/Université/Électronique et mesures/Lab 5/Labo 5 mesures/Labo 5 Partie 1 resistance avec condensateurs {i+1}.lvm')
     data = a[0]["data"]
     
@@ -20,7 +20,7 @@ for i in range(15):
     P = (V**2)/R
     I_P = math.sqrt(2*(I_V/V)**2 + (I_R/R)**2)*P
 
-    mesure = [R, I_R, P, I_P]
+    mesure = [R, I_R, (P*1000), (I_P*1000)]
 
     Ajout = True
 
@@ -31,6 +31,7 @@ for i in range(15):
             break
     if Ajout:
         Données += [mesure]
+    print(f"{i+1} & {R} ± {I_R} & {V} ± {I_V} & {P} ± {I_P}" + "\\" + "\\")
 
 Données = np.array(Données)
 
@@ -46,16 +47,12 @@ fig.subplots_adjust(bottom=0.3)
 
 plt.xscale("log")
 plt.errorbar(Res, Ten, xerr = I_Res, yerr = I_Ten, mfc = "black", ms = 4, ls = "-")
-plt.xlabel("Résistance (Ohm)")
-plt.ylabel("Tension efficace (mV)")
+plt.xlabel("Résistance [Ohm]")
+plt.ylabel("Puissance dissipée [mW]")
 
-caption = """
-Figure 2: Puissance en
-fonction de la résistance totale du circuit (Ohm)
-dans la circuit sans condensateurs en parallèle
-"""
+#caption = """Figure 2: Puissance en fonction de la résistance totale du circuit (Ohm) dans la circuit sans condensateurs en parallèle"""
 
-plt.text(0.07, 0.2, caption, fontsize='x-large', verticalalignment='top', transform=plt.gcf().transFigure)
+#plt.text(0.07, 0.2, caption, fontsize='x-large', verticalalignment='top', transform=plt.gcf().transFigure)
 
 plt.show
 #plt.savefig(rf"C:/DATA/Université/Électronique et mesures/Lab 5/Graphique tension efficace condensateur.pdf")
