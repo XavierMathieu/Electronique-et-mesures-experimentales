@@ -17,6 +17,9 @@ for i in range(20):
     
     V = np.mean(data[:, 1])
     I_V = np.std(data[:, 1])/math.sqrt(30)
+    if I_V < 0.0000000001:
+        I_V = 0.001
+
 
     P = (V**2)/R
     I_P = math.sqrt(2*(I_V/V)**2 + (I_R/R)**2)*P
@@ -46,14 +49,15 @@ from scipy import optimize
 
 def Puissance(R_ch, R_s):
     return (R_ch)/(2*(R_ch+R_s)**2)
+print(Res)
 
 #%%
 plt.style.use('https://raw.githubusercontent.com/dccote/Enseignement/master/SRC/dccote-errorbars.mplstyle')
 fig=plt.figure(figsize=(6.4, 4.8*1.2))
 fig.subplots_adjust(bottom=0.3)
 
-Res_ref = np.linspace(10, 250 , 2500)
-Pui_ref = np.linspace(0, 2.5, 2500)
+Res_ref = np.linspace(10, 250 , 25000)
+Pui_ref = np.linspace(0, 2.5, 25000)
 
 plt.xscale("log")
 plt.errorbar(Res, Ten*1000, xerr = I_Res, yerr = I_Ten*1000, mfc = "black", ms = 4, ls = "-", label="Puissance réele")
@@ -66,7 +70,7 @@ print(f"Résistance de la source: {R_s} ± {err[0]}")
 ref = Puissance(Res_ref, R_s)
 
 plt.plot(Res_ref, Puissance(Res_ref, R_s)*1000, color = "red", ms = 0, ls = "-", label = "Courbe du modèle théorique")
-plt.plot(Res_ref[list(ref).index(max(ref))]*np.ones(2500), Pui_ref, color="blue", ms = 0, ls = "-", label = f"Résistance de la source")
+plt.plot(Res_ref[list(ref).index(max(ref))]*np.ones(25000), Pui_ref, color="blue", ms = 0, ls = "-", label = f"Résistance de la source")
 plt.xlabel("Résistance (Ohm)")
 plt.ylabel("Puissance dissipée (mW)")
 plt.legend()
@@ -75,7 +79,7 @@ plt.legend()
 #plt.text(0.07, 0.2, caption, fontsize='x-large', verticalalignment='top', transform=plt.gcf().transFigure)
 
 plt.show
-#plt.savefig(rf"C:/DATA/Université/Électronique et mesures/Lab 5/Graphique tension efficace résistance seule.pdf")
+#plt.savefig(rf"C:/DATA/Université/Électronique et mesures/Graphique Puissance Résistance.pdf")
 
 
 
