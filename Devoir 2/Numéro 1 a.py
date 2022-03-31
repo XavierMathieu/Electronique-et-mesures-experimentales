@@ -14,7 +14,7 @@ def G_w(w):
 
 #%%
 W = np.linspace(0, 10000000, 10000001)
-Db = np.linspace(0, 0.17, 1000)
+Db = np.linspace(-100, -15, 1000)
 ref = G_w(W)
 W_max = W[list(ref).index(max(ref))]
 print(W_max)
@@ -32,14 +32,16 @@ plt.style.use('https://raw.githubusercontent.com/dccote/Enseignement/master/SRC/
 fig=plt.figure(figsize=(6.4, 4.8*1.2))
 #fig.subplots_adjust(bottom=0.3)
 plt.xscale("log")
-plt.plot(W, G_w(W), ls = '-', ms = 0, label="Gain")
+plt.plot(W, 20*np.log10(G_w(W)), ls = '-', ms = 0, label="Gain")
 plt.plot(W_max*np.ones(1000), Db, color="blue", ms = 0, ls = "-", label="Fréquence de résonnance")
 plt.plot(W_coup_1*np.ones(1000), Db, color="red", ms = 0, ls = "-" , label="Fréquences de coupure")
 plt.plot(W_coup_2*np.ones(1000), Db, color="red", ms = 0, ls = "-")
+#plt.plot(np.linspace(0, 10000000, 1000), (max(20*np.log10(G_w(W)))-3)*np.ones(1000), color="green", ms = 0, ls = "-")
 plt.xlabel("Fréquence (rad/s)")
-plt.ylabel("Gain [-]")
+plt.ylabel("Gain [dB]")
 plt.legend()
 #plt.text(0.1, 0.15, caption, fontsize='x-large', verticalalignment='top', transform=plt.gcf().transFigure)
 
 plt.show
+#plt.savefig(rf"C:/DATA/Université/Électronique et mesures/Devoir 2 numéro 1.pdf")
 # %%
