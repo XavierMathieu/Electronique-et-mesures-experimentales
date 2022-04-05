@@ -5,7 +5,7 @@ import numpy as np
 import lvm_read as l
 import math
 
-R = 10000
+R = 18000
 C = 0.000001
 
 def G_w_c(w):
@@ -24,7 +24,7 @@ def P_w_r(w):
 
 
 #%%
-W = np.linspace(0, 1000000, 1000001)
+W = np.linspace(0, 100, 101)
 
 
 
@@ -34,11 +34,11 @@ plt.style.use('https://raw.githubusercontent.com/dccote/Enseignement/master/SRC/
 fig=plt.figure(figsize=(6.4, 4.8*1.2))
 fig.subplots_adjust(bottom=0.3)
 
-Db = np.linspace(0, 1, 1000)
+Db = np.linspace(0, 0.2, 1000)
 
-plt.xscale("log")
-plt.plot(W, G_w_c(W), ls = '-', ms = 0, label="Gain")
-plt.plot(np.ones(1000)/(R*C), Db, ls = '-', ms = 0, color="red", label="Valeur de RC")
+#plt.xscale("log")
+plt.plot(W, G_w_c(W)/(2*np.pi), ls = '-', ms = 0, label="Gain")
+plt.plot(5*np.ones(1000), Db, ls = '-', ms = 0, color="red", label="Valeur de RC")
 plt.xlabel("Fréquence (rad/s)")
 plt.ylabel("Gain [-]")
 plt.legend()
@@ -62,7 +62,7 @@ Db = np.linspace(-1.5, 0, 1000)
 
 plt.xscale("log")
 plt.plot(W, P_w_c(W), ls = '-', ms = 0, label="Gain")
-plt.plot(np.ones(1000)/(R*C), Db, ls = '-', ms = 0, color="red", label="Valeur de RC")
+plt.plot(5*np.ones(1000), Db, ls = '-', ms = 0, color="red", label="Valeur de RC")
 plt.xlabel("Fréquence (rad/s)")
 plt.ylabel("Phase [rad]")
 plt.legend()
